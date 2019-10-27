@@ -1,0 +1,19 @@
+# Quick PHP Dev
+# (c) 2019 Wen Yang Ho
+# This code is licensed under MIT license (see LICENSE.txt for details)
+
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: quickphpdev
+    image: php:7.3.2-apache
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8080:80
+    tty: true
+    
